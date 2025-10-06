@@ -1,0 +1,176 @@
+{
+    "evidences":[
+        "Freezing temperatures",
+        "Ghost orb",
+        "Spirit box",
+        "D.O.T.S.",
+        "EMF 5",
+        "UV fingerprints",
+        "Ghost writing"
+    ],
+
+    "evidencesLogo":[
+        "thermometer.svg",
+        "orb.svg",
+        "radio.svg",
+        "dots.svg",
+        "emfLevel.svg",
+        "hand.svg",
+        "book.svg"
+    ],
+
+    "ghosts": [
+        {
+            "name": "Spirit",
+            "evidences": [
+                4, 2, 6
+            ],
+            "speedType": "normal",
+            "speed": 1.7,
+            "huntSanity": 50,
+            "weakness": [
+                "Weak to incense"
+            ],
+            "power": [
+
+            ],
+            "traits": [
+                "Cannot hunt for 180 seconds (3 minutes) after a incense is used next to it."
+            ],
+            "strategies": [
+                "If the entity attack before 3 minutes after an incense, it is not a spirit."
+            ]
+        },
+
+        {
+            "name": "Wraith",
+            "evidences": [
+                4, 2, 3
+            ],
+            "speedType": "normal",
+            "speed": 1.7,
+            "huntSanity": 50,
+            "weakness": [
+                "Cannot walk in salt"
+            ],
+            "power": [
+                "Can teleport to any player"
+            ],
+            "traits": [
+                "Will never disturb salt pile when walking on it, even during a hunt.",
+                "Can teleport to any player at any moment, causing an EMF 2 (or 33% chance for an EMF 5)."
+            ],
+            "strategies": [
+                "If the entity walk on a pile of salt during a hunt and does not disturb it, it is a wraith.",
+                "When a player gets an interaction or an EMF 2 or 5 far from the ghost room, it is likely to be a wraith."
+            ]
+        },
+
+        {
+            "name": "Phantom",
+            "evidences": [
+                2, 5, 3
+            ],
+            "speedType": "normal",
+            "speed": 1.7,
+            "huntSanity": 50,
+            "weakness": [
+                "Disappear on photos"
+            ],
+            "power": [
+                "Less visible during hunts",
+                "Can roam to any player",
+                "Drain sanity faster when showing"
+            ],
+            "traits": [
+                "Taking a photo/video of a phantom will make it diseapear, and the entity will never be visible on resulting media.",
+                "Can roam to any player at any moment, causing an EMF 2 in the room at the end of the roam (when arriving at the player).",
+                "Will show less during hunt (the invisible period of flickering will be longer)."
+            ],
+            "strategies": [
+                "If a photo is saying \"ghost photo\" but the entity is not visible on it, it is a phantom (make sure to double check because of sync bugs).",
+                "When a player gets an interaction or an EMF 2 far from the ghost room, it is likely to be a phantom.",
+                "If the entity flicker slower during a hunt, it is likely to be a phantom."
+            ]   
+        },
+
+        {
+            "name": "Poltergeist",
+            "evidences": [
+                2, 5, 6
+            ],
+            "speedType": "normal",
+            "speed": 1.7,
+            "huntSanity": 50,
+            "weakness": [
+                "Throw more objects during a hunt"
+            ],
+            "power": [
+                "Can throw multiple objects at once",
+                "Can throw objects farther"
+            ],
+            "traits": [
+                "When multiple objects are close to eachother, it can throw the whole pile at once (or make them levitate, which will not leave traces after).",
+                "When throwing an objects, it has a small chance to throw it with a greater force (can append during hunt).",
+                "During a hunt, it will throw an object every 0.5 seconds (instead of 50% chance every 0.5 seconds) if there is an objects to throw near it."
+            ],
+            "strategies": [
+                "Making a pile (or multiple ones in big room) of objects make the poltergeist ability easier to recognize.",
+                "Check the number of objects thrown during a hunt, and the speed at which they are being thrown."
+            ]   
+        },
+
+        {
+            "name": "Banshee",
+            "evidences": [
+                5, 1, 3
+            ],
+            "speedType": "normal",
+            "speed": 1.7,
+            "huntSanity": 50,
+            "weakness": [
+                "Unique scream on Parabolic microphone",
+                "Choose a single target"
+            ],
+            "power": [
+                "Hunts depends only on target's sanity"
+            ],
+            "traits": [
+                "Will chose a unique target at the start of the game, and will only change when it dies or disconnect",
+                "Unable to chase/kill non-target player while the current target is inside the building.",
+                "When making a paranormal sound, it has a 33% chance to make one of its <a href=\"https://www.youtube.com/watch?v=afh1Ddeextk\">unique scream</a> instead.",
+                "The sanity required to start a hunt is only based on it's target and not the average sanity, making it possible to start a hunt at 85% or 15% average sanity."
+            ],
+            "strategies": [
+                "Check average and individual sanity after a hunt.",
+                "Listen to ghost screams with a Parabolic microphone or a sound recorder.",
+                "Check if the ghost is able to see and hunt every player."
+            ]
+        },
+
+        {
+            "name": "Jinn",
+            "evidences": [
+                4, 5, 0
+            ],
+            "speedType": "normal +",
+            "speed": 1.7,
+            "huntSanity": 50,
+            "weakness": [
+                "Cannot directly turn off the fuse box",
+                "Unable to use it's ability when fuse box is off"
+            ],
+            "power": [
+                "Will have a greater speed (2.5 m/s) if targetting player is far from it"
+            ],
+            "traits": [
+                "Cannot turn the fuse box off directly (but it can turn it off by turning on too many lights).",
+                "The ghost will have a greater speed only if it is targetting a player, the player is more than 3m away and the fuse box is on."
+            ],
+            "strategies": [
+                "When fuse box turn off, check the lights switches. If somes are still on, then the entity turn off the fuse box directly. If not, the fuse box tripped because of too many light active.",
+                "The Jinn is still able to do the \"turn off the fuse box\" event. So if an EMF is linked to no event near the fuse box, it might be the Jinn trying to turn it off."
+            ]
+        }
+    ]
+}

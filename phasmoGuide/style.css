@@ -1,0 +1,159 @@
+:root {
+    --text-color: #e2e2e2;
+    --background-color: #131516;
+    --header-color: #000306;
+    --background-second: #343738;
+    --primary-color: #ce5c2f;
+    --secondary-color: #565a1e81;
+    --accent-color: #f50000;
+}
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+body {
+    margin: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font: small-caps bold 18px/1 sans-serif;
+
+    & > header {
+        display: flex;
+        background-color: var(--header-color);
+        background-image: url(src/phasmo.jpg);
+        background-size: auto 14em;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 4.2em;
+
+        & > h1 {
+            margin-left: 3rem;
+            font: small-caps bold 30px/1 sans-serif;
+            color: var(--accent-color);
+        }
+    }
+
+    & > main {
+        min-height: calc(100vh - 4.2em - 3em);
+
+        display: grid;
+        grid-template-columns: minmax(15em, 28vw) 6vw 59vw;
+        justify-content: center;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+
+        & > aside {
+            & > h2 {
+            }
+
+            & > div {
+                & > article {
+                    display: flex;
+                    gap: 2em;
+                    align-items: center;
+                    margin: 1em;
+                    background-color: var(--header-color);
+                    border-radius: 5px;
+                    padding: 0.5em;
+                    height: 3em;
+
+                    & > img {
+                        height: 2.5em;
+                        margin-left: 1em;
+                    }
+                }
+            }
+        }
+
+        & > .hr {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & > p {
+                border-left: solid 2px var(--background-second);
+                height: 95%;
+            }
+        }
+
+        & > section {
+            & > h2 {
+            }
+
+            & > div {
+                display: flex;
+                flex-wrap: wrap;
+
+                & > article {
+                    margin: 0.5em;
+                    background-color: var(--header-color);
+                    border-radius: 5px;
+                    padding: 1em;
+                    width: 17em;
+
+                    & > div {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 1em;
+
+                        & > h3 {
+                            margin: 0;
+                            margin-bottom: 0.5em;
+                        }
+
+                        & > ul {
+                            margin: 0;
+                            display: flex;
+                            gap: 1.5em;
+                            list-style: none;
+                            font-size: 0.7em;
+
+                            & > li > img {
+                                height: 3em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & > footer {
+        margin: 0;
+        background-color: var(--header-color);
+
+        & > ul {
+            margin: 0;
+            display: flex;
+            gap: 10em;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--header-color);
+            height: 3em;
+
+            & > li {
+                list-style: none;
+                font-size: 0.9em;
+            }
+        }
+    }
+}
+
+#svgBook {
+    background-color: var(--primary-color);
+    -webkit-mask: url(src/book.svg) no-repeat center;
+    mask: url(src/book.svg) no-repeat center;
+    width: 10em;
+}
