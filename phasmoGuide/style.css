@@ -20,11 +20,22 @@ a:hover {
     color: var(--accent-color);
 }
 
+.hr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > p {
+        border-left: solid 2px var(--background-second);
+        height: 95%;
+    }
+}
+
 body {
     margin: 0;
     color: var(--text-color);
     background-color: var(--background-color);
-    font: small-caps bold 18px/1 sans-serif;
+    font: small-caps 400 18px/1 sans-serif;
 
     & > header {
         display: flex;
@@ -46,10 +57,10 @@ body {
         min-height: calc(100vh - 4.2em - 3em);
 
         display: grid;
-        grid-template-columns: minmax(15em, 28vw) 6vw 59vw;
+        grid-template-columns: 22em 6vw calc(88vw - 22em);
         justify-content: center;
-        padding-left: 3vw;
-        padding-right: 3vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
         padding-top: 1vw;
         padding-bottom: 1vw;
 
@@ -62,28 +73,25 @@ body {
                     display: flex;
                     gap: 2em;
                     align-items: center;
-                    margin: 1em;
+                    margin: .5em;
                     background-color: var(--header-color);
                     border-radius: 5px;
                     padding: 0.5em;
-                    height: 3em;
+                    height: 2.5em;
+                    font-weight: bolder;
+                    cursor: pointer;
+                    transition: 0.2s;
 
                     & > img {
                         height: 2.5em;
                         margin-left: 1em;
                     }
                 }
-            }
-        }
 
-        & > .hr {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            & > p {
-                border-left: solid 2px var(--background-second);
-                height: 95%;
+                & > .selected {
+                    color: var(--accent-color);
+                    background-color: var(--header-color);
+                }
             }
         }
 
@@ -91,41 +99,221 @@ body {
             & > h2 {
             }
 
+            & > #ghostsContainer > div > article {
+                background-color: var(--header-color);
+            }
+
+            & > #eliminatedGhosts > div > article {
+                background-color: var(--background-second);
+            }
+
             & > div {
                 display: flex;
                 flex-wrap: wrap;
 
-                & > article {
-                    margin: 0.5em;
-                    background-color: var(--header-color);
-                    border-radius: 5px;
-                    padding: 1em;
-                    width: 17em;
+                & > div {
+                    & > article {
+                        height: calc(100% - 3em);
+                        margin: 0.5em;
+                        border-radius: 5px;
+                        padding: 1em;
+                        width: 20em;
 
-                    & > div {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin-bottom: 1em;
+                        & > .title {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
 
-                        & > h3 {
-                            margin: 0;
-                            margin-bottom: 0.5em;
+                            & > h3 {
+                                margin: 0;
+                                font-size: 1.8em;
+                                color: var(--accent-color);
+                            }
+
+                            & > ul {
+                                margin: 0;
+                                display: flex;
+                                gap: 1.5em;
+                                list-style: none;
+                                font-size: 0.7em;
+                                padding-left: 0;
+
+                                & > li > img {
+                                    height: 3em;
+                                }
+                            }
                         }
 
-                        & > ul {
-                            margin: 0;
-                            display: flex;
-                            gap: 1.5em;
-                            list-style: none;
-                            font-size: 0.7em;
+                        & > hr {
+                            margin-top: 0.3em;
+                            margin-bottom: 0;
+                        }
 
-                            & > li > img {
-                                height: 3em;
+                        & > .baseInfos {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin: 0;
+
+                            & > p {
+                                margin: 0.5em;
+                                font:
+                                    0.9rem "Fira Sans",
+                                    sans-serif;
+                            }
+
+                            & .speed {
+                                margin-top: 0.5em;
+                                font-size: 0.9em;
+                                font-weight: bolder;
+                            }
+
+                            & .sanity {
+                                margin-top: 0.5em;
+                                font-size: 0.9em;
+                                font-weight: bolder;
+                            }
+                        }
+
+                        & > .infos {
+                            font:
+                                1rem "Fira Sans",
+                                sans-serif;
+
+                            & > ul {
+                                padding-left: 0.3em;
+                                padding-right: 1.5em;
+                            }
+
+                            & > .power {
+                                & > li {
+                                    list-style: none;
+                                }
+
+                                & > li::before {
+                                    content: "";
+                                    display: inline-block;
+                                    height: 1.5em;
+                                    width: 1.5em;
+                                    background-image: url(src/power.svg);
+                                    background-position: center;
+                                    background-position-y: 0.3em;
+                                }
+                            }
+
+                            & > .weakness {
+                                & > li {
+                                    list-style: none;
+                                }
+
+                                & > li::before {
+                                    content: "";
+                                    display: inline-block;
+                                    height: 1.5em;
+                                    width: 1.5em;
+                                    background-image: url(src/weakness.svg);
+                                    background-position: center;
+                                    background-position-y: 0.3em;
+                                }
                             }
                         }
                     }
                 }
+            }
+        }
+    }
+
+    & > #details {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > article {
+            background-color: var(--background-color);
+            height: fit-content;
+            width: 80vw;
+            padding: 2em;
+
+            & > .title {
+                display: grid;
+                grid-template-columns: 22em calc(100% - 25em) 3em;
+                align-items: center;
+                margin-bottom: 1em;
+
+                & > h2 {
+                    text-align: center;
+                    font-size: 4em;
+                    margin: 0;
+                    color: var(--accent-color);
+                }
+
+                & > ul {
+                    display: grid;
+                    grid-template-columns: 33% 33% 33%;
+                    list-style: none;
+                    align-items: center;
+                    padding-right: 10%;
+                    padding-left: 10%;
+                    margin: 0;
+
+                    & > li {
+                        text-align: center;
+
+                        & > img {
+                            width: 3em;
+                        }
+                    }
+                }
+
+                & > button {
+                    margin-bottom: auto;
+                    background-color: var(--background-color);
+                    border: 0;
+                    height: 4em;
+                    width: 4em;
+                    background-image: url(src/close.svg);
+                    background-size: 4em 4em;
+                }
+            }
+
+            & > .misc {
+                display: grid;
+                grid-template-columns: 33% 1em 33% 1em 33%;
+                justify-content: center;
+                margin-bottom: 0.5em;
+
+                & > section {
+                    display: flex;
+                    justify-content: center;
+                    font-size: 1.1em;
+                    font:
+                        1.1rem "Fira Sans",
+                        sans-serif;
+
+                    & > .value {
+                        font-weight: bolder;
+                        font-size: 1.15em;
+                        margin-left: 1em;
+                    }
+                }
+            }
+
+            & > .traits,
+            & > .strats {
+                font:
+                    1.2rem "Fira Sans",
+                    sans-serif;
+            }
+
+            & > h3 {
+                font-size: 2rem;
+                font-weight: bolder;
             }
         }
     }

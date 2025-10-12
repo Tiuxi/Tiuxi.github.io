@@ -26,16 +26,17 @@
                 4, 2, 6
             ],
             "speedType": "normal",
-            "speed": 1.7,
-            "huntSanity": 50,
+            "speed": "1.7",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
             "weakness": [
-                "Weak to incense"
+                "Weak to incenses"
             ],
             "power": [
 
             ],
             "traits": [
-                "Cannot hunt for 180 seconds (3 minutes) after a incense is used next to it."
+                "Cannot hunt for 180 seconds (3 minutes) instead of 90 after a incense is used next to it."
             ],
             "strategies": [
                 "If the entity attack before 3 minutes after an incense, it is not a spirit."
@@ -48,8 +49,9 @@
                 4, 2, 3
             ],
             "speedType": "normal",
-            "speed": 1.7,
-            "huntSanity": 50,
+            "speed": "1.7",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
             "weakness": [
                 "Cannot walk in salt"
             ],
@@ -72,13 +74,14 @@
                 2, 5, 3
             ],
             "speedType": "normal",
-            "speed": 1.7,
-            "huntSanity": 50,
+            "speed": "1.7",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
             "weakness": [
+                "Less visible during hunts",
                 "Disappear on photos"
             ],
             "power": [
-                "Less visible during hunts",
                 "Can roam to any player",
                 "Drain sanity faster when showing"
             ],
@@ -90,7 +93,7 @@
             "strategies": [
                 "If a photo is saying \"ghost photo\" but the entity is not visible on it, it is a phantom (make sure to double check because of sync bugs).",
                 "When a player gets an interaction or an EMF 2 far from the ghost room, it is likely to be a phantom.",
-                "If the entity flicker slower during a hunt, it is likely to be a phantom."
+                "If the entity is clearly less visible during a hunt, it is a phantom."
             ]   
         },
 
@@ -100,14 +103,15 @@
                 2, 5, 6
             ],
             "speedType": "normal",
-            "speed": 1.7,
-            "huntSanity": 50,
+            "speed": "1.7",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
             "weakness": [
                 "Throw more objects during a hunt"
             ],
             "power": [
                 "Can throw multiple objects at once",
-                "Can throw objects farther"
+                "Can throw objects further away"
             ],
             "traits": [
                 "When multiple objects are close to eachother, it can throw the whole pile at once (or make them levitate, which will not leave traces after).",
@@ -126,8 +130,9 @@
                 5, 1, 3
             ],
             "speedType": "normal",
-            "speed": 1.7,
-            "huntSanity": 50,
+            "speed": "1.7",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
             "weakness": [
                 "Unique scream on Parabolic microphone",
                 "Choose a single target"
@@ -138,7 +143,7 @@
             "traits": [
                 "Will chose a unique target at the start of the game, and will only change when it dies or disconnect",
                 "Unable to chase/kill non-target player while the current target is inside the building.",
-                "When making a paranormal sound, it has a 33% chance to make one of its <a href=\"https://www.youtube.com/watch?v=afh1Ddeextk\">unique scream</a> instead.",
+                "When making a paranormal sound, it has a 33% chance to make one of its <a href=\"https://www.youtube.com/watch?v=afh1Ddeextk\" target=\"_blank\">unique scream</a> instead.",
                 "The sanity required to start a hunt is only based on it's target and not the average sanity, making it possible to start a hunt at 85% or 15% average sanity."
             ],
             "strategies": [
@@ -153,24 +158,216 @@
             "evidences": [
                 4, 5, 0
             ],
-            "speedType": "normal +",
-            "speed": 1.7,
-            "huntSanity": 50,
+            "speedType": "normal/fast",
+            "speed": "1.7 - 2.5",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
             "weakness": [
                 "Cannot directly turn off the fuse box",
                 "Unable to use it's ability when fuse box is off"
             ],
             "power": [
-                "Will have a greater speed (2.5 m/s) if targetting player is far from it"
+                "Will have a greater speed if targetting player is far from it"
             ],
             "traits": [
                 "Cannot turn the fuse box off directly (but it can turn it off by turning on too many lights).",
-                "The ghost will have a greater speed only if it is targetting a player, the player is more than 3m away and the fuse box is on."
+                "The ghost will have a greater speed (2.5 m/s) only if it is targetting a player, the player is more than 3m away and the fuse box is on."
             ],
             "strategies": [
                 "When fuse box turn off, check the lights switches. If somes are still on, then the entity turn off the fuse box directly. If not, the fuse box tripped because of too many light active.",
                 "The Jinn is still able to do the \"turn off the fuse box\" event. So if an EMF is linked to no event near the fuse box, it might be the Jinn trying to turn it off."
             ]
+        },
+
+        {
+            "name": "Mare",
+            "evidences": [
+                6, 1, 2
+            ],
+            "speedType": "normal",
+            "speed": "1.7",
+            "huntSanity": "60/40",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Can instantly turn a switch off after a player turned it on",
+                "Cannot turn on a light switch"
+            ],
+            "power": [
+                "More likely to turn off the lights"
+            ],
+            "traits": [
+                "When a player turn on a light switch and the mare is in within a 4m range, it can turn off the switch instantly after.",
+                "The hunt sanity depends on the room the ghost currently is (not his favorite room). If lights are on in this room, the hunt sanity is 40%, else it is 60%.",
+                "The mare has an increased chance to turn off or shatter the lights."
+            ],
+            "strategies": [
+                "During a ghost event, if a switch is turned off instantly after a player turned it on, then the ghost is a mare.",
+                "The mare prefer the dark, so if the ghost is roaming or changing is favorite frequently when the lights are on in his room, it is likely a mare.",
+                "If the ghost turn on a light, then it is not a mare."
+            ]
+        },
+
+        {
+            "name": "Revenant",
+            "evidences": [
+                6, 1, 0
+            ],
+            "speedType": "slow/fast",
+            "speed": "1 - 3",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Slow when roaming during hunts"
+            ],
+            "power": [
+                "Very fast when hunting a player"
+            ],
+            "traits": [
+                "During a hunt, when roaming the revenant will be very slow, with speed of 1 m/s compared to the standard 1.7 m/s.",
+                "Be careful, as soon as the ghost detects and track a player, it will be very fast with it's speed instantly turning to 3 m/s instead of building up.",
+                "The speed will decrease when the ghost arrive at the last location it detected the player, returning in ~ 2.5s to it's slow speed."
+            ],
+            "strategies": [
+                "The ghost speed is the only way to detect if the ghost is a revenant."
+            ]
+        },
+
+        {
+            "name": "Shade",
+            "evidences": [
+                6, 4, 0
+            ],
+            "speedType": "normal",
+            "speed": "1.7",
+            "huntSanity": "35",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Less likely to interact when average sanity is high",
+                "Cannot do anything while in the same room of a player"
+            ],
+            "power": [
+                
+            ],
+            "traits": [
+                "When doing an event, the ghost have a 0% chance of seccessfully performing that event. The success rate increases by 2% per percentage average sanity lost.",
+                "When a player is in the same room as the shade, any interaction, event or hunt will be canceled.",
+                "Be careful, when a ghost does an interaction or an event, it has a range in which it can do it. Following this rule, a shade could perform an interaction in the same room as a player, because it is in a different room.",
+                "When doing an event the shade have an increased chance of appearing as a shadow.", 
+                "when appearing using cursed possessions (summoning circle, music box ...) the shade has a chance of appearing as a shadow. It will still return to normal form when starting the hunt after."
+            ],
+            "strategies": [
+                "Due to it's (in)abilities and very low hunt threshold, the lack of interaction may be pointing that the ghost is a shade.",
+                "If the ghost appear in a shade form when using a cursed possession, it is a shade."
+            ]
+        },
+
+        {
+            "name": "Demon",
+            "evidences": [
+                6, 5, 0
+            ],
+            "speedType": "normal",
+            "speed": "1.7",
+            "huntSanity": "70",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Weak to crucifix"
+            ],
+            "power": [
+                "Can initiate a hunt at any moments",
+                "Can hunt more often",
+                "Less affected by incense"
+            ],
+            "traits": [
+                "The demon can initiate a hunt moments regardless of average sanity. If it is in a period in which it cannot hunt (hunt cooldown, setup phase ...) it will still prevent the hunt.",
+                "The hunt cooldown of a demon is 20s instead of 25.",
+                "Crucifix have ranged increased by 50% for demons.",
+                "Incense will only prevents hunt for 60s instead of 90."
+            ],
+            "strategies": [
+                "If the ghost hunt while the average sanity is above 80%, it is a demon.",
+                "If the ghost hunt before 25s after another hunt, it is a demon.",
+                "If the ghost hunt before 90s after using an incense on it, it is a demon.",
+                "The crucifix range is more likely to help eliminate demon (if it hunt very close to the crucifix normal range) as it is difficult to know the exact ghost location."
+            ]
+        },
+
+        {
+            "name": "Yurei",
+            "evidences": [
+                3, 1, 0
+            ],
+            "speedType": "normal",
+            "speed": "1.7",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Incense will trap it in his room",
+                "Can only fully close or fully open door"
+            ],
+            "power": [
+                "Can gently close a door, causing everyone nearby to loose a lot of sanity"
+            ],
+            "traits": [
+                "When using an icense on a yurei, it will teleport it in his room and trap it inside for the duration of the incese (90s).",
+                "The yurei cannot slightly open or close door. It can only fully close or fully open them. This is only true when the ghost is not hunting.",
+                "It's ability is to gently closing a door instead of slamming it, causing every player in a range of 7.5m to loose 15% of their sanity, and creating an EMF 2 interaction"
+            ],
+            "strategies": [
+                "Keeping a maximum number of door fully open may help to witness the yurei ability.",
+                "If a door is only partially opened or closed outside of a hunt, it is not a yurei.",
+                "Trapping the ghost with an incense and checking it's position with motion sensors can help eliminating the yurei."
+            ]
+        },
+
+        {
+            "name": "Oni",
+            "evidences": [
+                3, 4, 0
+            ],
+            "speedType": "normal",
+            "speed": "1.7",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Cannot perform the mist event",
+                "More visible during hunts"
+            ],
+            "power": [
+                "Drains more sanity when colliding with a player during an event"
+            ],
+            "traits": [
+                "The yurei is slightly more visible during hunts (the visible period of flickering will be longer).",
+                "Cannot perform the mist event (white fog ball comming toward a player and hissing on collision). Be carefull as some other events or hunt sound can cause the same hissing.",
+                "When colliding with a player during an event, it will drains double of the standard sanity (20%)."
+            ],
+            "strategies": [
+                "If the ghost does a mist event, it is not an oni.",
+                "If the ghost is slightly more visible during hunt, it is an oni (hard to differentiate from standard ghost without training)."
+            ]   
+        },
+
+        {
+            "name": "Yokai",
+            "evidences": [
+                3, 1, 2
+            ],
+            "speedType": "normal",
+            "speed": "1.7",
+            "huntSanity": "80/50",
+            "forcedEvidence": -1,
+            "weakness": [
+                ""
+            ],
+            "power": [
+                "Talking next to it will increase the hunt sanity threshold"
+            ],
+            "traits": [
+                ""
+            ],
+            "strategies": [
+                ""
+            ]   
         }
     ]
 }
