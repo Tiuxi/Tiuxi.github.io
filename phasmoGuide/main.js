@@ -20,7 +20,7 @@ const showDetails = (ghostIndex) => {
     details.querySelector(".misc > .speed").innerHTML = `speed : <div class="value">${ghost.speed} m/s</div>`;
     details.querySelector(".misc > .huntSanity").innerHTML = `hunt sanity threshold : <div class="value">${ghost.huntSanity} %</div>`;
     if (ghost.forcedEvidence != -1)
-        details.querySelector(".misc > .forcedEv").innerHTML = evidences[ghost.forcedEvidence];
+        details.querySelector(".misc > .forcedEv").innerHTML = `Forced evidence : <div class="value">${evidences[ghost.forcedEvidence]}</div>`;
     else 
         details.querySelector(".misc > .forcedEv").innerHTML = "No forced evidence";
 
@@ -111,9 +111,10 @@ const selectEvidence = (indexEv, src) => {
         const activeSlot = ghostsContainer.children[indexGh];
 
         const shouldBeEliminated = selected.some(ev => !ghost.evidences.includes(ev));
+        const shouldBeEliminated2 = selectedSpeed.some(sp => !ghost.speedType.includes(clickableSpeed[sp])) & !ghost.speedType.includes("+");
 
         const currentParent = ghostElem.parentElement;
-        const newParent = shouldBeEliminated ? eliminatedSlot : activeSlot;
+        const newParent = shouldBeEliminated | shouldBeEliminated2 ? eliminatedSlot : activeSlot;
 
         if (currentParent !== newParent) {
             moveWithAnimation(ghostElem, newParent);
@@ -131,10 +132,11 @@ const selectSpeed = (speed) => {
         const eliminatedSlot = eliminatedContainer.children[indexGh];
         const activeSlot = ghostsContainer.children[indexGh];
 
-        const shouldBeEliminated = selectedSpeed.some(sp => !ghost.speedType.includes(clickableSpeed[sp])) & !ghost.speedType.includes("+");
+        const shouldBeEliminated = selected.some(ev => !ghost.evidences.includes(ev));
+        const shouldBeEliminated2 = selectedSpeed.some(sp => !ghost.speedType.includes(clickableSpeed[sp])) & !ghost.speedType.includes("+");
 
         const currentParent = ghostElem.parentElement;
-        const newParent = shouldBeEliminated ? eliminatedSlot : activeSlot;
+        const newParent = shouldBeEliminated | shouldBeEliminated2 ? eliminatedSlot : activeSlot;
 
         if (currentParent !== newParent) {
             moveWithAnimation(ghostElem, newParent);

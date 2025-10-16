@@ -197,7 +197,7 @@
             ],
             "traits": [
                 "When a player turn on a light switch and the mare is in within a 4m range, it can turn off the switch instantly after.",
-                "The hunt sanity depends on the room the ghost currently is (not his favorite room). If lights are on in this room, the hunt sanity is 40%, else it is 60%.",
+                "The hunt sanity threshold depends on the room the ghost currently is (not his favorite room). If lights are on in this room, the threshold is 40%, else it is 60%.",
                 "The mare has an increased chance to turn off or shatter the lights."
             ],
             "strategies": [
@@ -357,17 +357,331 @@
             "huntSanity": "80/50",
             "forcedEvidence": -1,
             "weakness": [
-                ""
+                "When hunting, the yokai will only hear and sense people close to him"
             ],
             "power": [
-                "Talking next to it will increase the hunt sanity threshold"
+                "Talking when in the same room as him will increase the hunt sanity threshold"
             ],
             "traits": [
-                ""
+                "When a player is using voice chat or global voice chat in the same room as the yokai, the hunt sanity threhold jump from 50% to 80%.",
+                "When hunting, the yokai will only hear voice chat from 2.5m instead of the standard 9m. It will also sense electronic devices from 2.5m instead of 7.5m."
             ],
             "strategies": [
-                ""
+                "When the ghost is hunting, you can test if it is a yokai by activating electronics or global voice chat while staying out of it sight. If the ghost is pretty close but doesn't notice, it is a yokai."
             ]   
+        },
+
+        {
+            "name": "Hantu",
+            "evidences": [
+                1, 5, 0
+            ],
+            "speedType": "any",
+            "speed": "1.4 to 2.7",
+            "huntSanity": "50",
+            "forcedEvidence": 0,
+            "weakness": [
+                "Emit freezing breath during hunts",
+                "Slow in warmer room"
+            ],
+            "power": [
+                "Fast in colder room",
+                "Cool down room around it in during hunt"
+            ],
+            "traits": [
+                "The hantu speed can vary from 1.4m/s in room > 15°C, to 2.7m/s in room < 0°C. It will also not build up speed when it have a line of sight with a player.",
+                "During a hunt, it will cool down room it is currently in, making it dangerous to loop it over a long period since it's speed will rapidely.",
+                "During a hunt, it will also emit freezing breath around it's head, no matter the room temperature."
+            ],
+            "strategies": [
+                "In practice, the ghost will have a greater speed near and inside his favorite room, and a lower speed elsewhere, which can help identifying it safely and rapidly.",
+                "If the ghost is emitting freezing breath during a hunt, it is a Hantu."
+            ]   
+        },
+
+        {
+            "name": "Goryo",
+            "evidences": [
+                3, 4, 5
+            ],
+            "speedType": "normal",
+            "speed": "1.7",
+            "huntSanity": "50",
+            "forcedEvidence": 3,
+            "weakness": [
+                "Cannot perform long roam",
+                "Cannot change favorite room"
+            ],
+            "power": [
+                "D.O.T.S. is only visible through a camera",
+                "Cannot enter D.O.T.S. state while a player is in the room"
+            ],
+            "traits": [
+                "When roaming, instead of having a chance to perform a long or short roam, the goryo will always perform short roam (3m max).",
+                "In higher difficulty where the ghost can change room, the goryo will never change it's favorite room (unless monkey paw is used).",
+                "The goryo has a higher chance to enter the D.O.T.S. state, but if a player is in the same room, it will fail",
+                "The D.O.T.S. form of the goryo is only visible on a camera"
+            ],
+            "strategies": [
+                "If you see a D.O.T.S. on a camera, but not with naked eye, it is a goryo. Conversely, if a D.O.T.S. is seen without a camera, it is not a goryo.",
+                "Hunts almost always starting from the ghost favorite room can indicate a goryo, although it is not very reliable.",
+                "If the ghost wander far from the ghost room, it can eliminate goryo, but it also not very reliable since the path of a roam doesn't need to be fully inside the 3m range."
+            ]   
+        },
+
+        {
+            "name": "Myling",
+            "evidences": [
+                6, 4, 5
+            ],
+            "speedType": "normal",
+            "speed": "1.7",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Can make more paranormal sounds"
+            ],
+            "power": [
+                "Quietter footstep when hunting"
+            ],
+            "traits": [
+                "The myling can produce a paranormal sound every 64 to 127s instead of every 80 to 127s.",
+                "When hunting, the footstep will be less audible from further away (quiet at 12m instead of 20m)."
+            ],
+            "strategies": [
+                "Since the electronic interference range (10m) is almost the same as the myling audible range, dropping a flashlight and checking the sound emitted by the ghost at the electronic interference range can help identifying a myling. Be sure to check speed to not confuse it with a raiju.",
+                "If a paranormal sound is recorded or heard less than 80s after the last one, it is a goryo."
+            ]   
+        },
+
+        {
+            "name": "Onryo",
+            "evidences": [
+                1, 0, 2
+            ],
+            "speedType": "normal",
+            "speed": "1.7",
+            "huntSanity": "60/40",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Hunt sanity threshold lower near a flame",
+                "Flame can prevent a hunt"
+            ],
+            "power": [
+                "Every 3 flame blown out, it will attempt to hunt",
+                "Blow more flame when more players are dead"
+            ],
+            "traits": [
+                "When the onryo is near a flame, the hunt sanity threshold drops from 60% to 40%",
+                "If a onryo tries to hunt within 4m of a flame, the hunt will be canceled and it will blow the flame instead. This doesn't restart the hunt cooldown timer.",
+                "Since the ability to prevent hunt with candle can happend at any time, the onryo can blow out the same flame in less than 20s.",
+                "When the onryo blow a flame for the third time, it will try to hunt, regardless of the average sanity.",
+                "The base chances and frequency of blowing a flame for an onryo is the same as every other ghost. However, this frequency will increase with the number of player currently dead."
+            ],
+            "strategies": [
+                "Put a candle on top of a crucifix. If the crucifix is used before the candle to prevent a hunt, this might not be an onryo (with crucifix tier 2 and 3, the range is more than the candle prevention range, so this method is not entirely reliable).",
+                "If three candles are blown by the ghost and it then tries to hunt soon after the third one (from 1s to 6s after), it might be an onryo.",
+                "If a ghost blow out the same flame twice within a 20s interval, it is a onryo."
+            ]
+        },
+
+        {
+            "name": "The Twins",
+            "evidences": [
+                4, 0, 2
+            ],
+            "speedType": "slow/fast",
+            "speed": "1.5 - 1.9",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Can interact two times in a row"
+            ],
+            "power": [
+                "Can change speed between hunt",
+                "Can hunt from two differents angles"
+            ],
+            "traits": [
+                "Mechanically, the twins is only one single ghost, so motion sensor, salt and temperature will never produce the evidence that there is two ghosts. Additionnaly, two hunts or ghost events cannot happend at the same time.",
+                "When interacting with the environnement, the twins have a chance to use it's ability instead. It will first interact very close to where it is (up to 4m) and then perform another interaction further away (up to 17m). Both interaction have the 33% chances to trigger an EMF 5.",
+                "When hunting, and after checking if it can hunt or if it is prevented by a crucifix, the twin will choose to be either slow (1.5m/s) or fast (1.9m/s), with 50% chances for each.",
+                "If the ghost choose to be slow, it will start to hunt from where it currently is.",
+                "If the ghost choose to be fast, it will first teleport to the last far-range interaction it did with it's ability, and then beggin to hunt. Since the crucifix check is done before this, this is the only ghost than can beggin the hunt in top of a crucifix."
+            ],
+            "strategies": [
+                "Having EMF 5 far from the ghost room, where no other evidence is obtained, or in warm room, can indicate that it is the twins.",
+                "If the ghost start a hunt dirrectly on top of a crucifix, it is the twins.",
+                "If differents speed are noticed between hunts (but speed remain constant during a single hunt), it can indicate that it is the twins."
+            ]
+        },
+
+        {
+            "name": "Raiju",
+            "evidences": [
+                3, 4, 1
+            ],
+            "speedType": "normal/fast",
+            "speed": "1.7 - 2.5",
+            "huntSanity": "50/65",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Interfere with electronics from further away"
+            ],
+            "power": [
+                "More dangerous when near electronics"
+            ],
+            "traits": [
+                "During hunts and ghost events, the raiju will interfere with electronics from 15m instead of 10m.",
+                "If the raiju is closed to an active electronics (within 6/10m deppending of the map size), the hunt sanity threshold jumps from 50% to 65%.",
+                "During a hunt, if the raiju is closed to an active electronics, it will have a constant speed of 2.5m/s instead of the standard 1.7m/s."
+            ],
+            "strategies": [
+                "If the ghost have massive acceleration when roaming during hunts, this might be a raiju. Be careful to test for the hantu too since they can have the same speed acceleration.",
+                "Since the electronic interference range is almost the same as the raiju audible range (20m), dropping a flashlight and checking the sound emitted by the ghost at the electronic interference range can help identifying a raiju. Be sure to check speed to not confuse it with a myling."
+            ]
+        },
+
+        {
+            "name": "Obake",
+            "evidences": [
+                4, 1, 5
+            ],
+            "speedType": "normal",
+            "speed": "1.7",
+            "huntSanity": "50",
+            "forcedEvidence": 5,
+            "weakness": [
+                "Can leaves a 6-fingered fingerprints",
+                "Can shapeshift during a hunt"
+            ],
+            "power": [
+                "Does not always leave fingerprints",
+                "Can reduce time left for fingerprints"
+            ],
+            "traits": [
+                "When interacting with an object that usually leaves fingerprints (door, salt, light switches), the obake has a 25% chances to not leave one.",
+                "When the obake leave a fingerprints, it has a ~17% chance to leave the wrong number of fingerprints (6 finger hand on doors or 2 fingerprints on light switches).",
+                "When it decide to trigger it's ability, it will reduce the remaining time of every fingerprints by half.",
+                "During a hunt, the obake will shapeshift into another ghost model (including his own) for one tick of the flickering. The obake will always shapeshift on the <a href=\"https://phasmophobia.fandom.com/wiki/Obake#Hunt\">same ticks</a> between each hunts, and the models will be in a predefined order."
+            ],
+            "strategies": [
+                "If any fingerprint leaves the wrong number of finger, it is an obake.",
+                "If the ghost touch multiple surface (or walk in salt) and sometimes leaves fingerprints and sometimes not, it is an obake.",
+                "As a ghost footstep sound after it walked in salt can only be heard when it should leaves a footprint, it is possible to identify an obake because of a missing footstep sound even on a no evidence run.",
+                "During a hunt, it is possible to identify an obake with it's shapeshift abilty when looping the ghost."
+            ]
+        },
+
+        {
+            "name": "The Mimic",
+            "evidences": [
+                5, 0, 2, 1
+            ],
+            "speedType": "any",
+            "speed": "any",
+            "huntSanity": "any",
+            "forcedEvidence": 1,
+            "weakness": [
+                "Will always show ghost orb along with all other evidences"
+            ],
+            "power": [
+                "Can mimic any ghost comportement except evidences"
+            ],
+            "traits": [
+                "The mimic will always provide the ghost orb evidences, no matter the number of evidences provided (so it usually has 4 evidences).",
+                "Every 30s to 2 minutes, the mimic will choose a ghost that it will copy until a new ghost is choosen. When it copy a ghost, it act like that ghost in every point (ability, speed, hunt sanity threshold ...) except for it's evidences, and will always provide his own evidence.",
+                "The mimic can copy itself. If so, it will have standard hunt sanity threshold (50%) and standard speed (1.7m/s).",
+                "During the first minute of a contract, the mimic cannot copy another ghost, so if a ghost is identified during the first minute, checking for the mimic is not necessary"
+            ],
+            "strategies": [
+                "Always be sure to check for ghost orb when suspecting the mimic.",
+                "If a ghost is changing it's comportement very often (different speed, abilities, activity...) it's likely the mimic"
+            ]
+        },
+
+        {
+            "name": "Moroi",
+            "evidences": [
+                2, 6, 0
+            ],
+            "speedType": "any",
+            "speed": "1.5 - 2.25",
+            "huntSanity": "50",
+            "forcedEvidence": 2,
+            "weakness": [
+                "Weak to incenses"
+            ],
+            "power": [
+                "Can curse a player, making it loose it's sanity faster",
+                "Speed depends on average sanity"
+            ],
+            "traits": [
+                "When a response is obtained through spirit box, or a paranormal sound is heard or recorded, the player at the source of the interaction will be cursed. Curses do not stack on a single player, but multiple player can be cursed.",
+                "When cursed, the passive sanity drain is doubled and it will always be active in the investigation area (light doesn't prevent it, but candles still reduce the drain).",
+                "Taking sanity pills will remove the curse. The player can still be cursed again after.",
+                "The moroi is faster, the lower the average sanity is. From 1.5m/s for sanity above 45%, and 2.25m/s below 5%.",
+                "When an icense is used during a hunt to escape the ghost, the moroi will be blinded for 7.5s instead of 5."
+            ],
+            "strategies": [
+                "As the speed of the moroi is calculated in real time to the average sanity, it is likely to speed up a bit during a hunt while players have more than 5% average sanity and they are loosing sanity.",
+                "It is also possible to witness a significant change in the moroi speed by affecting greatly a player sanity (curse possessions to loose sanity, or pills to gain sanity). Make sure that the speed change is caused by the sanity change.",
+                "Smudging the moroi and counting the time blinded by the incense is also a way to identify the moroi. It is easier to do with tier 2 and 3 incenses as they slow down the ghost while it is blinded."
+            ]
+        },
+
+        {
+            "name": "Deogen",
+            "evidences": [
+                2, 6, 3
+            ],
+            "speedType": "slow/fast",
+            "speed": "0.4 - 3",
+            "huntSanity": "40",
+            "forcedEvidence": 2,
+            "weakness": [
+                "Very slow when close to a player",
+                "More visible than other ghosts",
+                "Produce unique spirit box response"
+            ],
+            "power": [
+                "Always know where players are",
+                "Very fast when far from a player"
+            ],
+            "traits": [
+                "During hunts, the deogen is considered to always have line of sight with every player, so hiding in safe spot from it will not work and may result in death.",
+                "If the deogen is distance between the player and the deogen is below 2.5m, the ghost speed will be 0.4m/s making it the slowest ghost in the game. If the distance is over 6m, the ghost speed will be 3m/s. Between 2.5m and 6m, the speed increase or decrease lineary.",
+                "During hunts, the deogen will be slightly more visible than most of the other ghost.",
+                "If a player ask a question through a spirit box, and the deogen is less than 1m close, then it have a 33% chance to produce a <a href=\"https://youtu.be/0Ifx9XbK0Bg?si=4UmSby7qOK_YCHYY\">unique response</a> instead.",
+                "As the ghost hunt mechanic is really unique and different, a contract ghost will never be a deogen before the host reaches level 30 of prestige 0 (the mimic can still imitate a deogen thought)."
+            ],
+            "strategies": [
+                "If a deogen is suspected, be careful to hide in places where you can easily escape.",
+                "As the deogen is the slowest ghost, the safest way to escape him during a hunt is to loop him around a table or in a room with a lot of space. It is also a good way to practice for looping a ghost.",
+                "The best way to identify a deogen is through a hunt, as it will always target a player and it's extrems speed will make it really easy to identify."
+            ]
+        },
+
+        {
+            "name": "Thaye",
+            "evidences": [
+                1, 6, 3
+            ],
+            "speedType": "any",
+            "speed": "1 - 2.75",
+            "huntSanity": "75/15",
+            "forcedEvidence": -1,
+            "weakness": [
+
+            ],
+            "power": [
+                
+            ],
+            "traits": [
+                
+            ],
+            "strategies": [
+                
+            ]
         }
     ]
 }
