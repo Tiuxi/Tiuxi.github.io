@@ -111,7 +111,7 @@ const selectEvidence = (indexEv, src) => {
         const activeSlot = ghostsContainer.children[indexGh];
 
         const shouldBeEliminated = selected.some(ev => !ghost.evidences.includes(ev));
-        const shouldBeEliminated2 = selectedSpeed.some(sp => !ghost.speedType.includes(clickableSpeed[sp])) & !ghost.speedType.includes("+");
+        const shouldBeEliminated2 = selectedSpeed.some(sp => !ghost.speedType.includes(clickableSpeed[sp])) & !ghost.speedType.includes("any");
 
         const currentParent = ghostElem.parentElement;
         const newParent = shouldBeEliminated | shouldBeEliminated2 ? eliminatedSlot : activeSlot;
@@ -133,7 +133,7 @@ const selectSpeed = (speed) => {
         const activeSlot = ghostsContainer.children[indexGh];
 
         const shouldBeEliminated = selected.some(ev => !ghost.evidences.includes(ev));
-        const shouldBeEliminated2 = selectedSpeed.some(sp => !ghost.speedType.includes(clickableSpeed[sp])) & !ghost.speedType.includes("+");
+        const shouldBeEliminated2 = selectedSpeed.some(sp => !ghost.speedType.includes(clickableSpeed[sp])) & !ghost.speedType.includes("any");
 
         const currentParent = ghostElem.parentElement;
         const newParent = shouldBeEliminated | shouldBeEliminated2 ? eliminatedSlot : activeSlot;

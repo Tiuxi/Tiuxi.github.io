@@ -671,13 +671,14 @@
             "huntSanity": "75/15",
             "forcedEvidence": -1,
             "weakness": [
-
+                "Age when close to player, making it slower and less aggressive"
             ],
             "power": [
-                
+                "Very strong and dangerous at the start of the game"
             ],
             "traits": [
-                
+                "The thaye have an internal age, starting at zero with maximum of 10. At age zero, the thaye have a speed of 2.75m/s and a hunt sanity threshold at 75%.",
+                "Every 1 to 2 minutes, the thaye will try to age."
             ],
             "strategies": [
                 
