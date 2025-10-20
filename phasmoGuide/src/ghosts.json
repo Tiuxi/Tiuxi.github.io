@@ -677,11 +677,14 @@
                 "Very strong and dangerous at the start of the game"
             ],
             "traits": [
-                "The thaye have an internal age, starting at zero with maximum of 10. At age zero, the thaye have a speed of 2.75m/s and a hunt sanity threshold at 75%.",
-                "Every 1 to 2 minutes, the thaye will try to age."
+                "The thaye have an internal age, starting at zero with maximum of 10. At age zero, the thaye have a speed of 2.75m/s, a hunt sanity threshold at 75% and a ghost event chance of 200%.",
+                "Every 1 to 2 minutes, the thaye will try to age. Every age gained will reduce it's base speed by 0.175m/s, the ghost event chance by 15%, and the hunt sanity threshold by 6%.",
+                "At age 10, the thaye have a speed of 1m/s, a ghost event chance of 50% and a hunt sanity threshold of 15%.",
+                "For every age gained, the thaye will gained from 1 to 4 \"human age\" (age provided by the ouija board)."
             ],
             "strategies": [
-                
+                "If two differents ages are given by the ghost from the ouija board at different moment, the ghost is a thaye.",
+                "The other best way to identify a thaye is by it's hunting behavior, if speed changes are consistent through the contract, as the thaye will always slow down and never speed up."
             ]
         }
     ]
