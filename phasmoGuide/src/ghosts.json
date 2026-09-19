@@ -39,7 +39,7 @@
                 "Cannot hunt for 180 seconds (3 minutes) instead of 90 after a incense is used next to it."
             ],
             "strategies": [
-                "If the entity attack before 3 minutes after an incense, it is not a spirit."
+                "If the entity attack before 3 minutes after an incense was used on it, it is not a spirit."
             ]
         },
 
@@ -63,7 +63,7 @@
                 "Can teleport to any player at any moment, causing an EMF 2 (or 33% chance for an EMF 5)."
             ],
             "strategies": [
-                "If the entity walk on a pile of salt during a hunt and does not disturb it, it is a wraith.",
+                "If the entity walk on a pile of salt during a hunt and does not disturb it, it is a wraith (be sure to double check with the Gallue, that it can <strong>never</strong> step in salt).",
                 "When a player gets an interaction or an EMF 2 or 5 far from the ghost room, it is likely to be a wraith."
             ]
         },
@@ -91,7 +91,7 @@
                 "Will show less during hunt (the invisible period of flickering will be longer)."
             ],
             "strategies": [
-                "If a photo is saying \"ghost photo\" but the entity is not visible on it, it is a phantom (make sure to double check because of sync bugs).",
+                "If a photo is saying \"ghost photo\" but the entity is not visible on it, it is a phantom (make sure to double check because of sync bugs and camera angle bugs).",
                 "When a player gets an interaction or an EMF 2 far from the ghost room, it is likely to be a phantom.",
                 "If the entity is clearly less visible during a hunt, it is a phantom."
             ]   
@@ -115,8 +115,8 @@
             ],
             "traits": [
                 "When multiple objects are close to eachother, it can throw the whole pile at once (or make them levitate, which will not leave traces after).",
-                "When throwing an objects, it has a small chance to throw it with a greater force (can append during hunt).",
-                "During a hunt, it will throw an object every 0.5 seconds (instead of 50% chance every 0.5 seconds) if there is an objects to throw near it."
+                "When throwing an object, it has a small chance to throw it with a greater force (can append during hunt).",
+                "During a hunt, it will throw an object every 0.5 seconds (instead of 50% chance every 0.5 seconds) if there is an object to throw near it."
             ],
             "strategies": [
                 "Making a pile (or multiple ones in big room) of objects make the poltergeist ability easier to recognize.",
@@ -174,7 +174,7 @@
                 "The ghost will have a greater speed (2.5 m/s) only if it is targetting a player, the player is more than 3m away and the fuse box is on."
             ],
             "strategies": [
-                "When fuse box turn off, check the lights switches. If somes are still on, then the entity turn off the fuse box directly. If not, the fuse box tripped because of too many light active.",
+                "When fuse box turn off, check the lights switches. If somes are still turned on, then the entity turn off the fuse box directly. If not, the fuse box tripped because of too many light active.",
                 "The Jinn is still able to do the \"turn off the fuse box\" event. So if an EMF is linked to no event near the fuse box, it might be the Jinn trying to turn it off."
             ]
         },
@@ -196,7 +196,7 @@
                 "More likely to turn off the lights"
             ],
             "traits": [
-                "When a player turn on a light switch and the mare is in within a 4m range, it can turn off the switch instantly after.",
+                "When a player turn on a light switch and the mare is within a 4m range, it can turn off the switch instantly after.",
                 "The hunt sanity threshold depends on the room the ghost currently is (not his favorite room). If lights are on in this room, the threshold is 40%, else it is 60%.",
                 "The mare has an increased chance to turn off or shatter the lights."
             ],
@@ -249,11 +249,11 @@
                 
             ],
             "traits": [
-                "When doing an event, the ghost have a 0% chance of seccessfully performing that event. The success rate increases by 2% per percentage average sanity lost.",
+                "When doing an event, the ghost have a 0% chance of seccessfully performing that event. The success rate increases by 2% per percentage of average sanity lost.",
                 "When a player is in the same room as the shade, any interaction, event or hunt will be canceled.",
-                "Be careful, when a ghost does an interaction or an event, it has a range in which it can do it. Following this rule, a shade could perform an interaction in the same room as a player, because it is in a different room.",
+                "Be careful, when a ghost does an interaction or an event, it has a range in which it can do it. A shade could then interact in the room where a player is, by interacting while being in a neighbor room.",
                 "When doing an event the shade have an increased chance of appearing as a shadow.", 
-                "when appearing using cursed possessions (summoning circle, music box ...) the shade has a chance of appearing as a shadow. It will still return to normal form when starting the hunt after."
+                "when appearing using cursed possessions (summoning circle, music box ...) the shade is the only ghost that has a chance of appearing as a shadow. It will still return to normal form when starting the hunt after."
             ],
             "strategies": [
                 "Due to it's (in)abilities and very low hunt threshold, the lack of interaction may be pointing that the ghost is a shade.",
@@ -285,10 +285,10 @@
                 "Incense will only prevents hunt for 60s instead of 90."
             ],
             "strategies": [
-                "If the ghost hunt while the average sanity is above 80%, it is a demon.",
+                "If the ghost hunt while the average sanity is above 80%, it is a demon (stay careful with the banshee unique target ability and average sanity).",
                 "If the ghost hunt before 25s after another hunt, it is a demon.",
                 "If the ghost hunt before 90s after using an incense on it, it is a demon.",
-                "The crucifix range is more likely to help eliminate demon (if it hunt very close to the crucifix normal range) as it is difficult to know the exact ghost location."
+                "The crucifix range is less likely to help eliminate demon (if it hunt very close to the crucifix normal range) as it is difficult to know the exact ghost location."
             ]
         },
 
@@ -309,7 +309,7 @@
                 "Can gently close a door, causing everyone nearby to loose a lot of sanity"
             ],
             "traits": [
-                "When using an icense on a yurei, it will teleport it in his room and trap it inside for the duration of the incese (90s).",
+                "When using an icense on a yurei, it will teleport it in his room and trap it inside for the duration of the incense (90s).",
                 "The yurei cannot slightly open or close door. It can only fully close or fully open them. This is only true when the ghost is not hunting.",
                 "It's ability is to gently closing a door instead of slamming it, causing every player in a range of 7.5m to loose 15% of their sanity, and creating an EMF 2 interaction"
             ],
@@ -419,13 +419,13 @@
             "traits": [
                 "When roaming, instead of having a chance to perform a long or short roam, the goryo will always perform short roam (3m max).",
                 "In higher difficulty where the ghost can change room, the goryo will never change it's favorite room (unless monkey paw is used).",
-                "The goryo has a higher chance to enter the D.O.T.S. state, but if a player is in the same room, it will fail",
-                "The D.O.T.S. form of the goryo is only visible on a camera"
+                "The goryo has a higher chance to enter the D.O.T.S. state, but if a player is in the same room, it will fail.",
+                "The D.O.T.S. form of the goryo is only visible on a camera."
             ],
             "strategies": [
                 "If you see a D.O.T.S. on a camera, but not with naked eye, it is a goryo. Conversely, if a D.O.T.S. is seen without a camera, it is not a goryo.",
                 "Hunts almost always starting from the ghost favorite room can indicate a goryo, although it is not very reliable.",
-                "If the ghost wander far from the ghost room, it can eliminate goryo, but it also not very reliable since the path of a roam doesn't need to be fully inside the 3m range."
+                "If the ghost wander far from the ghost room, it can eliminate goryo, but it also not very reliable since the path of a roam doesn't need to be fully inside the 3m range, but only the ending location."
             ]   
         },
 
@@ -479,7 +479,7 @@
                 "The base chances and frequency of blowing a flame for an onryo is the same as every other ghost. However, this frequency will increase with the number of player currently dead."
             ],
             "strategies": [
-                "Put a candle on top of a crucifix. If the crucifix is used before the candle to prevent a hunt, this might not be an onryo (with crucifix tier 2 and 3, the range is more than the candle prevention range, so this method is not entirely reliable).",
+                "Put a candle on top of a crucifix. If the crucifix is used before the candle to prevent a hunt, this might not be an onryo (with crucifix tier 2 and 3, the range is larger than the candle prevention range, so this method is not entirely reliable).",
                 "If three candles are blown by the ghost and it then tries to hunt soon after the third one (from 1s to 6s after), it might be an onryo.",
                 "If a ghost blow out the same flame twice within a 20s interval, it is a onryo."
             ]
@@ -533,7 +533,7 @@
             "traits": [
                 "During hunts and ghost events, the raiju will interfere with electronics from 15m instead of 10m.",
                 "If the raiju is closed to an active electronics (within 6/10m deppending of the map size), the hunt sanity threshold jumps from 50% to 65%.",
-                "During a hunt, if the raiju is closed to an active electronics, it will have a constant speed of 2.5m/s instead of the standard 1.7m/s."
+                "During a hunt, if the raiju is close to any active electronic device, it will have a constant speed of 2.5m/s instead of the standard 1.7m/s."
             ],
             "strategies": [
                 "If the ghost have massive acceleration when roaming during hunts, this might be a raiju. Be careful to test for the hantu too since they can have the same speed acceleration.",
@@ -589,7 +589,7 @@
             ],
             "traits": [
                 "The mimic will always provide the ghost orb evidences, no matter the number of evidences provided (so it usually has 4 evidences).",
-                "Every 30s to 2 minutes, the mimic will choose a ghost that it will copy until a new ghost is choosen. When it copy a ghost, it act like that ghost in every point (ability, speed, hunt sanity threshold ...) except for it's evidences, and will always provide his own evidence.",
+                "Every 30s to 2 minutes, the mimic will choose a ghost that it will copy until a new ghost is choosen. While copying a ghost, it act like that ghost in every point (ability, speed, hunt sanity threshold ...) except for it's evidences, and will always provide his own evidence.",
                 "The mimic can copy itself. If so, it will have standard hunt sanity threshold (50%) and standard speed (1.7m/s).",
                 "During the first minute of a contract, the mimic cannot copy another ghost, so if a ghost is identified during the first minute, checking for the mimic is not necessary"
             ],
@@ -649,10 +649,10 @@
             ],
             "traits": [
                 "During hunts, the deogen is considered to always have line of sight with every player, so hiding in safe spot from it will not work and may result in death.",
-                "If the deogen is distance between the player and the deogen is below 2.5m, the ghost speed will be 0.4m/s making it the slowest ghost in the game. If the distance is over 6m, the ghost speed will be 3m/s. Between 2.5m and 6m, the speed increase or decrease lineary.",
-                "During hunts, the deogen will be slightly more visible than most of the other ghost.",
+                "If the deogen's distance to the player targeted is below 2.5m, the ghost speed will be 0.4m/s making it the slowest ghost in the game. If the distance is over 6m, the ghost speed will be 3m/s. Between 2.5m and 6m, the speed increase or decrease lineary.",
+                "During hunts, the deogen will be slightly more visible than most of the other ghost (the invisible period of flickering will be shorter).",
                 "If a player ask a question through a spirit box, and the deogen is less than 1m close, then it have a 33% chance to produce a <a href=\"https://youtu.be/0Ifx9XbK0Bg?si=4UmSby7qOK_YCHYY\">unique response</a> instead.",
-                "As the ghost hunt mechanic is really unique and different, a contract ghost will never be a deogen before the host reaches level 30 of prestige 0 (the mimic can still imitate a deogen thought)."
+                "As the ghost hunt mechanic is really unique, a contract ghost will never be a deogen before the host reaches level 30 of prestige 0 (the mimic can still imitate a deogen thought)."
             ],
             "strategies": [
                 "If a deogen is suspected, be careful to hide in places where you can easily escape.",
@@ -685,6 +685,121 @@
             "strategies": [
                 "If two differents ages are given by the ghost from the ouija board at different moment, the ghost is a thaye.",
                 "The other best way to identify a thaye is by it's hunting behavior, if speed changes are consistent through the contract, as the thaye will always slow down and never speed up."
+            ]
+        },
+
+        {
+            "name": "Aswang",
+            "evidences": [
+                3, 0, 6
+            ],
+            "speedType": "slow",
+            "speed": "1.53",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Cannot kill player hiding"
+            ],
+            "power": [
+                "Accelerate faster when chasing a player during a hunt",
+                "Will block the last hiding spot spotted"
+            ],
+            "traits": [
+                "The aswang cannot kill a player that is hinding in an official hiding spot. If a player is found by the ghost in one of these spot, the hunt will end instantly.",
+                "When a hunt is ended through it's ability, the spot will be marked by the aswang. Then, when a new hunt will begin, the aswang will instantly teleport to the marked spot, and will start to hunt from there",
+                "The aswang is slower than other ghost when roaming, but will build up speed 1.5 times faster than others when chasing a player."
+            ],
+            "strategies": [
+                "If a hunt end at the moment a player is found in a hiding spot, the ghost is probably an aswang (be carefull of bad timing).",
+                "Any bad timing suspicion can be dispelled by checking if during the next hunt, the ghost appear in front of the hiding spot"
+            ]
+        },
+
+        {
+            "name": "Dayan",
+            "evidences": [
+                4, 1, 2
+            ],
+            "speedType": "any",
+            "speed": "1.2 / 1.7 / 2.3",
+            "huntSanity": "65/50/45",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Weak to static players"
+            ],
+            "power": [
+                "Strong against moving players"
+            ],
+            "traits": [
+                "While the closest player within 10 meters of the dayan is moving, the dayan will have a hunt sanity threshold of 65% and will have a fixed speed of 2.3m/s.",
+                "While the closest player within 10 meters of the dayan is static, the dayan will have a hunt sanity threshold of 45% and will have a fixed speed of 1.2m/s.",
+                "If no players are within the 10 meters, the ghost will have the standard 50% hunt sanity threshold, and will follow the standard rule for speed during hunt.",
+                "The dayan can only be a female ghost, with a female name and ghost model."
+            ],
+            "strategies": [
+                "The dayan can be ruled out if the ghost have a male name or a male ghost model.",
+                "The dayan can be identify with it's speed variation when a player is standing still or moving."
+            ]
+        },
+
+        {
+            "name": "Deildegast",
+            "evidence": [
+                4, 6, 3
+            ],
+            "speedType": "any",
+            "speed": "0.4 - 3.0",
+            "huntSanity": "50",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Become slower when a player interact with an object"
+            ],
+            "power": [
+                "Very fast when no objetcs have been interacted with"
+            ],
+            "traits": [
+                "The deildegast does not follow the standard acceleration rules during hunt, and will always have a fixed speed.",
+                "The deildegast have a base speed of 3.0m/s.",
+                "Each time a player (dead or alive) interact with a unique object (outside of doors, cursed objects and equipment), it's speed decrease by 0.1m/s.",
+                "After a hunt, or a hunt atempt (blocked by crucifix), the speed of the deildegast will reset to 3.0m/s."
+            ],
+            "strategies": [
+                "The ghost unique speed system and fixed speed with no line-of-sight acceleration is the best way to identify the deildegast.",
+                "The deildegast is the only entity with which the dead players can help the survivors, by picking up unique items and throwing them.",
+                "At 13 unique objects interacted, the ghost will have a speed equivalent to the standard ghost."
+            ]
+        },
+
+        {
+            "name": "Gallu",
+            "evidence": [
+                4, 2, 5
+            ],
+            "speedType": "any",
+            "speed": "1.36 - 1.96",
+            "huntSanity": "40/50/60",
+            "forcedEvidence": -1,
+            "weakness": [
+                "Switch between 3 state",
+                "After being enraged, it is weakened",
+            ], 
+            "power": [
+                "Stronger when enraged",
+                "Become enraged when protective equipements are used",
+                "Cannot step in salt when enraged"
+            ],
+            "traits": [
+                "The gallu have three different state : normal, enraged and weakened.",
+                "When enraged, the gallu's hunt sanity threshold is 60%, the crucifix range is reduced, the hunt speed is 1.96m/s and it cannot step in salt.",
+                "When normal, the gallu's hunt sanity threshold is 50% and the hunt speed is the standard 1.7m/s.",
+                "When weakened, the gallu's hunt sanity threshold is 40%, the crucifix range is increased and the hunt speed is 1.36m/s.",
+                "The gallu \"increase\" its state whenever an incense is used on it or when it step in salt (during or outside a hunt).",
+                "Whenever a hunt end and the gallu is in the enraged state, it will automatically switch to weakened (this is considered to be its ability)."
+            ],
+            "strategies": [
+                "If the ghost cannot walk in salt (during an event or hunt) it is likely a gallu. Be sure to not confuse it with a wraith, by either checking its speed, or checking that it still can walk in salt in other forms.",
+                "By smudging the gallu with an incense during a hunt and trigger its state change, the speed increase triggered by the state change can indicate that the entity is a Gallu.",
+                "If the ghost walk into a first pile of salt (or two if it began in weakened state), but is then unable to walk in other pile of salt, then it is a gallu."
             ]
         }
     ]
