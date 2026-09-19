@@ -744,7 +744,7 @@
 
         {
             "name": "Deildegast",
-            "evidence": [
+            "evidences": [
                 4, 6, 3
             ],
             "speedType": "any",
@@ -772,7 +772,7 @@
 
         {
             "name": "Gallu",
-            "evidence": [
+            "evidences": [
                 4, 2, 5
             ],
             "speedType": "any",
